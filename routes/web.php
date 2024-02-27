@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DashboardController;
+use App\http\Controllers\AgendaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,10 @@ use App\Http\Controllers\DashboardController;
 Route::prefix('/')->group(function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboards-index');
 });
+
+Route::prefix('/agendas')->group(function() {
+    Route::get('/', [AgendaController::class, 'index'])->name('agendas-index');
+    Route::get('/create', [AgendaController::class, 'create'])->name('agendas-create');
+    Route::post('/', [AgendaController::class, 'store'])->name('agendas-store');
+});
+

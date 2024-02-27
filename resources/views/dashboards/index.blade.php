@@ -4,12 +4,12 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="row py-4">
-        <div class="col-2" style="border-right: 1px solid #ddd; height: 100vh;">
+    <div class="row">
+        <div class="col-2 p-4" style="border-right: 1px solid #ddd; height: 100vh;">
             <h4>Paciente do dia</h4><br/>
             <p>Não tem paciente agendado para hoje</p>
         </div>
-        <div class="col-10">
+        <div class="col-10 p-5">
 
             <form action="" class="d-flex justify-content-around">
                 <div class="form-group">
