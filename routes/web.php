@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\http\Controllers\AgendaController;
 use App\http\Controllers\ConvenioController;
+use App\http\Controllers\ListaesperaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,11 @@ Route::prefix('/agendas')->group(function() {
     Route::get('/{id}/edit', [AgendaController::class, 'edit'])->where('id', '[0-9]+')->name('agendas-edit');
     Route::put('/{id}', [AgendaController::class, 'update'])->where('id', '[0-9]+')->name('agendas-update');
     Route::delete('/{id}', [AgendaController::class, 'destroy'])->where('id', '[0-9]+')->name('agendas-destroy');
+});
+
+Route::prefix('/listaesperas')->group(function() {
+    Route::get('/', [listaesperaController::class, 'index'])->name('listaesperas-index');
+    Route::post('/', [ListaesperaController::class, 'store'])->name('listaesperas-store');
+    
 });
 
