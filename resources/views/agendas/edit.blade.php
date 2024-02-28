@@ -6,35 +6,36 @@
 <div class="container-fluid">
     <div class="row d-flex justify-content-center">
         <div class="col-4">
-                <h4 class="mt-5">Cadastro de Agenda</h4><br/>
-            <form action="" method="POST">
+                <h4 class="mt-5">Atualização de Agenda</h4><br/>
+            <form action="{{ route('agendas-update', ['id'=>$agendas->id]) }}" method="POST">
                 @csrf
+                @method('put')
                 <div class="form-group my-3">
                     <label for="">Nome</label>
-                    <input type="text" class="form-control" name="nome">
+                    <input type="text" class="form-control" value="{{ $agendas->nome }}" name="nome">
                 </div>
                 <div class="form-group my-3">
                     <label for="">Telefone</label>
-                    <input type="text" class="form-control" name="telefone">
+                    <input type="text" class="form-control" value="{{ $agendas->telefone }}" name="telefone">
                 </div>
                 <div class="form-group my-3">
                     <label for="">E-mail</label>
-                    <input type="email" class="form-control" name="email">
+                    <input type="email" class="form-control" value="{{ $agendas->email }}" name="email">
                 </div>
                 <div class="form-group my-3">
                     <label for="">Convênio</label>
-                    <input type="text" class="form-control" name="convenio">
+                    <input type="text" class="form-control" value="{{ $agendas->convenio }}" name="convenio">
                 </div>
                 <div class="form-group my-3">
                     <label for="">Data / Hora</label>
-                    <input type="date" class="form-control" name="data_hora">
+                    <input type="date" class="form-control" value="{{ $agendas->data_hora }}" name="data_hora">
                 </div>
                 <div class="form-group my-3">
                     <label for="">Observação</label>
-                    <input type="text" class="form-control" name="observacao">
+                    <input type="text" class="form-control" value="{{ $agendas->observacao }}" name="observacao">
                 </div>
                 <div class="form-group my-3">
-                    <input type="submit" class="btn btn-warning btn-sm" value="Atualizar Agenda">
+                    <input type="submit" class="btn btn-warning btn-sm" value="Adicionar Agenda">
                 </div>
             </form>
         </div>

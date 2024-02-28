@@ -24,5 +24,8 @@ Route::prefix('/agendas')->group(function() {
     Route::get('/', [AgendaController::class, 'index'])->name('agendas-index');
     Route::get('/create', [AgendaController::class, 'create'])->name('agendas-create');
     Route::post('/', [AgendaController::class, 'store'])->name('agendas-store');
+    Route::get('/{id}/edit', [AgendaController::class, 'edit'])->where('id', '[0-9]+')->name('agendas-edit');
+    Route::put('/{id}', [AgendaController::class, 'update'])->where('id', '[0-9]+')->name('agendas-update');
+    Route::delete('/{id}', [AgendaController::class, 'destroy'])->where('id', '[0-9]+')->name('agendas-destroy');
 });
 

@@ -6,8 +6,26 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-2 p-4" style="border-right: 1px solid #ddd; height: 100vh;">
-            <h4>Paciente do dia</h4><br/>
-            <p>Não tem paciente agendado para hoje</p>
+            <h4>Pacientes do dia</h4><br/>
+            <div class="paciente_agendado">
+                <div class="card p-2">
+                    @foreach($agendas as $agenda)
+                        <ul  data-bs-toggle="dropdown">
+                            <li style="font-size: 12px; display:flex; justify-content: space-between; cursor: pointer;">
+                                <span class="text-success">{{ $agenda->nome }}</span>
+                                <span class="text-success">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-calendar2-week" viewBox="0 0 16 16">
+                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/>
+                                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+                                    </svg>
+                                </span>
+                            </li>
+                            <li style="font-size: 12px; color: #ccc;">{{ $agenda->data_hora }}</li>
+                            <hr>
+                        </ul>
+                    @endforeach
+                </div>
+            </div>
         </div>
         <div class="col-10 p-5">
 
@@ -28,7 +46,7 @@
 
             <div class="cards d-flex justify-content-between mt-5">
                 <div class="card w-100 shadow p-2 mx-2 text-center">
-                    <h2 class="text-primary">00</h2> 
+                    <h2 class="text-primary">0{{ $totalAgendas }}</h2> 
                     <div class="card-title text-secondary">Pacientes agendados</div>
                     <div class="card-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0d6efd" class="bi bi-calendar3" viewBox="0 0 16 16">
@@ -117,4 +135,5 @@
         </div>
     </div>
 </div>
+
 @endsection
