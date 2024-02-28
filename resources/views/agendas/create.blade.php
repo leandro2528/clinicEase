@@ -7,7 +7,7 @@
     <div class="row d-flex justify-content-center">
         <div class="col-4">
                 <h4 class="mt-5">Cadastro de Agenda</h4><br/>
-            <form action="" method="POST">
+            <form action="{{ route('agendas-store') }}" method="POST">
                 @csrf
                 <div class="form-group my-3">
                     <label for="">Nome</label>
@@ -23,7 +23,12 @@
                 </div>
                 <div class="form-group my-3">
                     <label for="">Convênio</label>
-                    <input type="text" class="form-control" name="convenio">
+                    <select class="form-select" name="convenio_id" id="convenio_id">
+                        <option value="select">-- Selecione um Convênio</option>
+                        @foreach($convenios as $convenio)
+                            <option value="{{ $convenio->id }}">{{ $convenio->nome }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group my-3">
                     <label for="">Data / Hora</label>

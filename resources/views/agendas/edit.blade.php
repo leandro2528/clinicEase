@@ -24,7 +24,12 @@
                 </div>
                 <div class="form-group my-3">
                     <label for="">Convênio</label>
-                    <input type="text" class="form-control" value="{{ $agendas->convenio }}" name="convenio">
+                    <select name="convenio_id" id="convenio_id">
+                        <option value="select">-- Selecione um Convênio</option>
+                        @foreach($convenios as $convenio)
+                            <option value="{{ $convenio->id }}">{{ $convenio->nome }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group my-3">
                     <label for="">Data / Hora</label>

@@ -13,8 +13,12 @@ class Agenda extends Model
         'nome',
         'telefone',
         'email',
-        'convenio',
+        'convenio_id',
         'data_hora',
         'observacao'
     ];
+
+    public function convenio() {
+        return $this->belongsTo(Convenio::class);
+    }
 }

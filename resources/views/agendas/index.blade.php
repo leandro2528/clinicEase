@@ -99,7 +99,7 @@
                             <td>{{ $agenda->nome }}</td>
                             <td>{{ $agenda->telefone }}</td>
                             <td>{{ $agenda->email }}</td>
-                            <td>{{ $agenda->convenio }}</td>
+                            <td>{{ $agenda->convenio->nome }}</td>
                             <td>{{ $agenda->data_hora }}</td>
                             <td>{{ $agenda->observacao }}</td>
                             <td class="d-flex">
