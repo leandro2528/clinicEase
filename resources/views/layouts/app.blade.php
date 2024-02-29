@@ -5,18 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title') - Painel Inícial</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
     <link rel="stylesheet" href="css/styles.css">
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth'
-            });
-            calendar.render();
-        });
-      </script>
 </head>
 <body>
     <header>
@@ -121,7 +114,9 @@
    
     @yield('content')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/scripts.js') }}"></script>
-    <script src="js/scripts.js"></script>
+    <script src="{{ asset('js/calendar/index.global.min.js') }}"></script>
+    <script src="{{ asset('js/core/locales-all.global.min.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+    
 </body>
 </html>

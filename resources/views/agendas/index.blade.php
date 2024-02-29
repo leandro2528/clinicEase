@@ -80,9 +80,7 @@
                     </div>
                 </div>
             </div>
-            <div id="calendar" class="my-4">
-                
-            </div>
+            <div id="calendar"></div>
         </div>
     </div>
 
