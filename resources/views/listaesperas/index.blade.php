@@ -15,6 +15,7 @@
                         <th>Email</th>
                         <th>Telefone</th>
                         <th>Observação</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody style="font-size: 10px;">
@@ -25,6 +26,7 @@
                         <td>{{ $listaespera->email }}</td>
                         <td>{{ $listaespera->telefone }}</td>
                         <td>{{ $listaespera->observacao }}</td>
+                        <td><a class="btn btn-success btn-sm" href="{{ route('agendas-create') }}">Agendar</a></td>
                     </tr>
                     @endforeach
                 </tbody>

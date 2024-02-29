@@ -11,7 +11,7 @@ use App\Models\Listaespera;
 class ListaesperaController extends Controller
 {
     public function index() {
-        $listaesperas = Listaespera::orderBy('created_at', 'desc')->with('agenda', 'convenio')->get();
+        $listaesperas = Listaespera::with('agenda', 'convenio')->get();
         $agendas = Agenda::all();
         $convenios = Convenio::all();
         return view('listaesperas.index', [
